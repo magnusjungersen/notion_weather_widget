@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<body style="margin:0">
+<img id="met" style="width:100%;height:auto;">
+<script>
+function load() {
+  const id = "2-2618425";
+  const ts = new Date().toISOString().slice(0,13).replace(/[-T:]/g,"");
+  document.getElementById("met").src =
+    `https://www.yr.no/en/content/${id}/meteogram.svg?mode=dark&ts=${ts}`;
+}
+load();                // on first load
+setInterval(load, 60*60*1000);   // refresh hourly inside the iframe
+</script>
+</body>
